@@ -1,0 +1,13 @@
+APP_NAME=pagweb-murillo
+STACK_FILE=stack.yml
+build:
+	docker build -t $(APP_NAME):latest .
+
+deploy:
+	docker stack deploy --with-registry-auth -c $(STACK_FILE) $(APP_NAME)
+
+logs:
+	docker service logs -f $(APP_NAME)_$(APP_NAME)
+
+rm:
+	docker stack rm $(APP_NAME)
