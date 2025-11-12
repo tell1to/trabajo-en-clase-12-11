@@ -1,13 +1,8 @@
-APP_NAME=web-murillo
-STACK_FILE=stack.yml
 build:
-	docker build -t $(APP_NAME):latest .
+	docker build -t  pagweb-murillo:latest .
 
 deploy:
-	docker stack deploy --with-registry-auth -c $(STACK_FILE) $(APP_NAME)
-
-logs:
-	docker service logs -f $(APP_NAME)_$(APP_NAME)
+	docker stack deploy --with-registry-auth -c stack.yml quinto
 
 rm:
-	docker stack rm $(APP_NAME)
+	docker stack rm quinto
