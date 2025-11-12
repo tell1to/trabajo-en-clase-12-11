@@ -1,4 +1,4 @@
-APP_NAME=pagweb-murillo
+APP_NAME=web-murillo
 STACK_FILE=stack.yml
 build:
 	docker build -t $(APP_NAME):latest .
