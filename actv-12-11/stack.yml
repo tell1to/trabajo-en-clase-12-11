@@ -8,11 +8,11 @@ services:
       labels: 
         - "traefik.enable=true"
         - "traefik.http.routers.web-murillo.entrypoints=http"
-        - "traefik.http.routers.web-murillo.rule=Host(`web-murillo.mateo.com`)"
+        - "traefik.http.routers.web-murillo.rule=Host(web-murillo.byronrm.com`)"
         - "traefik.http.middlewares.web-murillo-https-redirect.redirectscheme.scheme=https"
         - "traefik.http.routers.web-murillo.middlewares=web-murillo-https-redirect"
         - "traefik.http.routers.web-murillo-secure.entrypoints=https"
-        - "traefik.http.routers.web-murillo-secure.rule=Host(`web-murillo.mateo.com`)"
+        - "traefik.http.routers.web-murillo-secure.rule=Host(`web-murillo.byronrm.com`)"
         - "traefik.http.routers.web-murillo-secure.tls=true"
         - "traefik.http.routers.web-murillo-secure.tls.certresolver=http"
         - "traefik.http.routers.web-murillo-secure.service=web-murillo"
